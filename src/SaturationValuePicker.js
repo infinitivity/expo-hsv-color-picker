@@ -5,6 +5,7 @@ import {
   ViewPropTypes,
   PanResponder,
   StyleSheet,
+  I18nManager
 } from 'react-native';
 import { LinearGradient } from 'expo';
 import PropTypes from 'prop-types';
@@ -170,7 +171,8 @@ const styles = StyleSheet.create({
   },
   slider: {
     top: 0,
-    left: 0,
+    left: !I18nManager.isRTL? 0 : null,
+    right: I18nManager.isRTL? 0 : null,
     position: 'absolute',
     borderColor: '#fff',
   },
